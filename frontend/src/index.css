@@ -1,0 +1,141 @@
+
+/* Animación radar para el vehículo en movimiento */
+@keyframes pulsoVehiculo {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.75); }
+  70% { transform: scale(1.05); box-shadow: 0 0 0 14px rgba(245, 158, 11, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(245, 158, 11, 0); }
+}
+.bolido-car-marker {
+  animation: pulsoVehiculo 1.8s infinite;
+  border-radius: 50%;
+}
+.leaflet-container {
+  background: #090d16 !important;
+}
+
+
+/* Control dinámico de tema Oscuro y Claro */
+html.tema-oscuro .leaflet-tile-pane {
+  filter: invert(100%) hue-rotate(180deg) brightness(92%) contrast(90%);
+}
+html.tema-claro .leaflet-tile-pane {
+  filter: none;
+}
+
+/* Adaptación limpia de tarjetas y fondos cuando el usuario elige Modo Claro */
+html.tema-claro body {
+  background-color: #f1f5f9;
+  color: #0f172a;
+}
+html.tema-claro .bg-slate-950 {
+  background-color: #f1f5f9 !important;
+  color: #0f172a !important;
+}
+html.tema-claro .bg-slate-900,
+html.tema-claro .bg-slate-900\/95 {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border-color: #cbd5e1 !important;
+}
+html.tema-claro .bg-slate-800,
+html.tema-claro .bg-slate-800\/80,
+html.tema-claro .bg-slate-800\/90 {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+  border-color: #cbd5e1 !important;
+}
+html.tema-claro .border-slate-800,
+html.tema-claro .border-slate-700 {
+  border-color: #cbd5e1 !important;
+}
+html.tema-claro .text-white,
+html.tema-claro .text-slate-200,
+html.tema-claro .text-slate-300 {
+  color: #1e293b !important;
+}
+html.tema-claro .text-slate-400 {
+  color: #475569 !important;
+}
+html.tema-claro .text-amber-400 {
+  color: #d97706 !important;
+}
+html.tema-claro .text-emerald-400 {
+  color: #059669 !important;
+}
+
+/* Ocultar marca de agua inferior derecha de Leaflet */
+.leaflet-control-attribution {
+  display: none !important;
+}
+
+/* Contraste alto en modo día: letras negras dentro de todos los contenedores */
+html.tema-claro,
+html.tema-claro body,
+html.tema-claro p,
+html.tema-claro span,
+html.tema-claro label,
+html.tema-claro strong,
+html.tema-claro h1,
+html.tema-claro h2,
+html.tema-claro h3,
+html.tema-claro h4,
+html.tema-claro input,
+html.tema-claro select,
+html.tema-claro textarea,
+html.tema-claro .text-white,
+html.tema-claro .text-slate-100,
+html.tema-claro .text-slate-200,
+html.tema-claro .text-slate-300,
+html.tema-claro .text-slate-400,
+html.tema-claro .text-slate-500,
+html.tema-claro .text-amber-300,
+html.tema-claro .text-amber-400,
+html.tema-claro .text-emerald-300,
+html.tema-claro .text-emerald-400,
+html.tema-claro .text-red-300,
+html.tema-claro .text-red-400,
+html.tema-claro .text-blue-400 {
+  color: #090d16 !important;
+}
+
+/* Mantener contraste legible en botones de acción oscuros o sólidos */
+html.tema-claro .bg-emerald-500,
+html.tema-claro .bg-emerald-600,
+html.tema-claro .bg-amber-500,
+html.tema-claro .bg-red-600,
+html.tema-claro .bg-blue-600,
+html.tema-claro .bg-indigo-600 {
+  color: #090d16 !important;
+}
+
+html.tema-claro .bg-red-600,
+html.tema-claro .bg-blue-600,
+html.tema-claro .bg-indigo-600,
+html.tema-claro .bg-red-600 span,
+html.tema-claro .bg-blue-600 span,
+html.tema-claro .bg-indigo-600 span {
+  color: #ffffff !important;
+}
+
+/* Placeholders oscuros en inputs en modo día */
+html.tema-claro input::placeholder,
+html.tema-claro textarea::placeholder {
+  color: #475569 !important;
+}
+
+/* Restaurar colores claros en los controles flotantes oscuros encima del mapa */
+html.tema-claro .bg-slate-900\/90,
+html.tema-claro .bg-slate-900\/90 *,
+html.tema-claro .bg-slate-950\/90,
+html.tema-claro .bg-slate-950\/90 *,
+html.tema-claro .bg-slate-950\/85,
+html.tema-claro .bg-slate-950\/85 * {
+  color: #f8fafc !important;
+}
+
+html.tema-claro .bg-slate-900\/90.text-amber-400,
+html.tema-claro .bg-slate-900\/90 .text-amber-400,
+html.tema-claro .bg-slate-950\/90.text-amber-400,
+html.tema-claro .bg-slate-950\/90 .text-amber-400 {
+  color: #fbbf24 !important;
+}
